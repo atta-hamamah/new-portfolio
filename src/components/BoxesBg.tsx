@@ -2,10 +2,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const BoxesCore = () => {
+export const BoxesCore = ({ theme }: { theme: string }) => {
     const rows = new Array(150).fill(1);
     const cols = new Array(100).fill(1);
-    const colors = [
+    const colors = theme === 'dark' ? [
         '#B89B77', // Champagne Gold
         '#C4C4C4', // Platinum
         '#A89F91', // Warm Taupe
@@ -16,14 +16,25 @@ export const BoxesCore = () => {
         '#EAEAEA', // Off-White
         '#B0A59F', // Soft Mocha
         '#3A3B3E', // Deep Charcoal
-    ];
+    ] : [
+        "#1a73e8", // royal blue
+        "#34a853", // emerald green
+        "#fbbc05", // golden yellow
+        "#ea4335", // bright red
+        "#00bfae", // teal
+        "#8e44ad", // rich purple
+        "#f39c12", // warm amber
+        "#d35400", // burnt orange
+        "#2980b9", // strong blue
+        "#e67e22"  // deep tangerine
+    ]
 
     const getRandomColor = () => {
         return colors[Math.floor(Math.random() * colors.length)];
     };
 
     return (
-        <main className=" absolute left-0 top-0 w-full h-full ">
+        <main className=" -z-10  absolute left-0 top-0 w-full h-full ">
             <div
                 style={{
                     transform: `skewY(14deg)  skewX(-48deg)   `,
@@ -34,19 +45,20 @@ export const BoxesCore = () => {
                 {rows.map((_, i) => (
                     <motion.div
                         key={`row` + i}
-                        className="w-16 h-8  border-l  border-slate-700 relative"
+                        className="w-16 h-8 "
                     >
                         {cols.map((_, j) => (
-                            <motion.div
-                                whileHover={{
-                                    backgroundColor: `var(${getRandomColor()})`,
-                                    boxShadow: "5px 5px 5px rgba(255, 255, 255, 0.6)",
-                                    scale: 1.10,
-                                }}
+                            <div
                                 key={`col` + j}
-                                className="w-16 h-8  border-r border-t border-slate-700 relative"
+                                className='w-16 h-8  duration-500  relative'
+                                style={{
+                                    backgroundColor: '#A89F91',
+                                    transition: 'background-color 0.5s'
+                                }}
+                                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = getRandomColor())}
+                                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
                             >
-                            </motion.div>
+                            </div>
                         ))}
                     </motion.div>
                 ))}
