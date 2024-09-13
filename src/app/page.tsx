@@ -6,6 +6,9 @@ import { useState } from "react"
 import { CiLight, CiDark } from "react-icons/ci";
 import Projects from "@/components/Projects";
 import LinesBG from "@/components/LinesBG";
+import { FaHandPointRight } from "react-icons/fa";
+import { LiaBoxSolid } from "react-icons/lia";
+
 interface Colors {
   text: {
     dark: string,
@@ -30,6 +33,7 @@ const colors: Colors = {
 export default function Home() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark')
   const [projects, showProjects] = useState(false)
+  const [boxClicked, setBoxClicked] = useState(false)
 
 
   return (
@@ -51,7 +55,7 @@ export default function Home() {
               rotate: [0, 10, -10, 5, 0],
               transition: {
                 duration: 1,
-                repeat: 2,
+                repeat: 3,
                 repeatType: "loop",
                 ease: "easeInOut"
               }
@@ -67,18 +71,29 @@ export default function Home() {
           🙂
           This Atta a front-end developer
         </pre>
+
         <ul
           style={{
             color: colors.text[theme],
             backgroundColor: colors.bg[theme],
             boxShadow: ` 0px 0px 10px ${colors.bg[theme]} `
           }}
-          className=" absolute right-0 top-0 p-8 m-8 shadow-sm rounded-lg font-semibold text-5xl  flex items-center gap-4">
-          <li
-            onClick={() => showProjects(true)}
-            className=" cursor-pointer w-10 h-10 bg-red-400 ">
+          className=" absolute  right-0 top-0 p-8 m-8 shadow-sm rounded-lg font-semibold text-5xl  flex items-center gap-4">
+          <motion.div
+            className="mr-2 text-4xl"
+            animate={!boxClicked ? { x: [0, 0, 20, 0] } : ''}
+            transition={{
+              repeat: Infinity,
+              duration: 1,
+              ease: "easeInOut",
+            }}>
+            <FaHandPointRight />
+          </motion.div>
+          <LiaBoxSolid
+            className="cursor-pointer "
+            onClick={() => { showProjects(true), setBoxClicked(true) }}
+          />
 
-          </li>
           <li
             onClick={() => setTheme('light')}
             className={
@@ -97,7 +112,7 @@ export default function Home() {
             <CiDark className=' hover:rotate-12  duration-300 ' />
           </li>
         </ul>
-        <section className=" h-[calc(100vh-230px)] w-full relative -z-20 flex items-center justify-center p-8 gap-24  ">
+        <section className="  h-[calc(100vh-230px)] w-full relative -z-20 flex items-center justify-center p-8 gap-14  ">
           <LinesBG />
           <div className=" relative w-56 h-56 ">
             <Image
@@ -111,9 +126,9 @@ export default function Home() {
           <pre
             style={{
               color: colors.text[theme],
-              transform: 'scaleY(4)',
+              transform: 'scaleY(3.5) ',
             }}
-            className=" tracking-widest text-6xl ">
+            className=" tracking-widest text-6xl">
             Web Development Is Awesome.
           </pre>
         </section>
