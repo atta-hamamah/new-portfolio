@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react"
 import { CiLight, CiDark } from "react-icons/ci";
 import Projects from "@/components/Projects";
-
+import LinesBG from "@/components/LinesBG";
 interface Colors {
   text: {
     dark: string,
@@ -28,7 +28,7 @@ const colors: Colors = {
 }
 
 export default function Home() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark')
   const [projects, showProjects] = useState(false)
 
 
@@ -51,7 +51,7 @@ export default function Home() {
               rotate: [0, 10, -10, 5, 0],
               transition: {
                 duration: 1,
-                repeat: 1,
+                repeat: 2,
                 repeatType: "loop",
                 ease: "easeInOut"
               }
@@ -76,7 +76,7 @@ export default function Home() {
           className=" absolute right-0 top-0 p-8 m-8 shadow-sm rounded-lg font-semibold text-5xl  flex items-center gap-4">
           <li
             onClick={() => showProjects(true)}
-            className=" cursor-pointer w-20 h-20 bg-red-400 ">
+            className=" cursor-pointer w-10 h-10 bg-red-400 ">
 
           </li>
           <li
@@ -96,25 +96,36 @@ export default function Home() {
             }>
             <CiDark className=' hover:rotate-12  duration-300 ' />
           </li>
-
         </ul>
-        <div className=" relative w-[550px] h-[550px] mx-auto -z-20">
-          <Image
-            width={999}
-            height={999}
-            alt='image'
-            src='/face.jpg'
-            className=" w-full h-full rounded-full"
-          />
-        </div>
+        <section className=" h-[calc(100vh-230px)] w-full relative -z-20 flex items-center justify-center p-8 gap-24  ">
+          <LinesBG />
+          <div className=" relative w-56 h-56 ">
+            <Image
+              width={999}
+              height={999}
+              alt='image'
+              src='/face.png'
+              className=" w-full h-full rounded-xl"
+            />
+          </div>
+          <pre
+            style={{
+              color: colors.text[theme],
+              transform: 'scaleY(4)',
+            }}
+            className=" tracking-widest text-6xl ">
+            Web Development Is Awesome.
+          </pre>
+        </section>
+
       </section>
       <main
         style={{
           transition: 'transform 0.5s ease',
           transform: projects ? 'rotateX(0deg) ' : 'rotateX(90deg)',
         }}
-        className={`  duration-300 top-0 left-0 absolute h-full w-full bg-black/70 p-16 `}>
-        <Projects showProjects={showProjects} />
+        className={`  duration-300 top-0 left-0 absolute h-full w-full bg-black/30 p-16 `}>
+        <Projects colors={colors} theme={theme} showProjects={showProjects} />
       </main>
     </main>)
 }

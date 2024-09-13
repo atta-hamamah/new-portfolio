@@ -45,12 +45,12 @@ export const BoxesCore = ({ theme }: { theme: string }) => {
                 {rows.map((_, i) => (
                     <motion.div
                         key={`row` + i}
-                        className="w-16 h-8 "
+                        className="w-24 h-12 "
                     >
                         {cols.map((_, j) => (
                             <div
                                 key={`col` + j}
-                                className='w-16 h-8  duration-500  relative'
+                                className='w-24 h-12  duration-500  relative'
                                 style={{
                                     backgroundColor: '#A89F91',
                                     transition: 'background-color 0.5s'
