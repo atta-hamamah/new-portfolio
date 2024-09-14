@@ -8,6 +8,10 @@ import Projects from "@/components/Projects";
 import LinesBG from "@/components/LinesBG";
 import { FaHandPointRight } from "react-icons/fa";
 import { LiaBoxSolid } from "react-icons/lia";
+import { MdWavingHand } from "react-icons/md";
+import { FaFaceSmileBeam } from "react-icons/fa6";
+
+
 
 interface Colors {
   text: {
@@ -21,12 +25,12 @@ interface Colors {
 }
 const colors: Colors = {
   text: {
-    dark: '#EAEAEA',//light 
-    light: '#3A3B3E',//dark
+    dark: '#EAEAEA',
+    light: '#3A3B3E',
   },
   bg: {
     dark: '#3A3B3E',
-    light: '#EAEAEA',
+    light: '#FAFAFA',
   }
 }
 
@@ -42,35 +46,42 @@ export default function Home() {
         style={{ backgroundColor: colors.bg[theme] }}
         className=" -z-0 relative h-screen w-full overflow-hidden">
         <Boxes theme={theme} />
-        <pre
+
+        <div
           style={{
             color: colors.text[theme],
             backgroundColor: colors.bg[theme],
             boxShadow: ` 0px 0px 10px ${colors.bg[theme]} `
           }}
-          className=" p-8 m-8 shadow-sm rounded-lg font-semibold text-5xl ">
-          Hi there!
-          <motion.div
-            animate={{
-              rotate: [0, 10, -10, 5, 0],
-              transition: {
-                duration: 1,
-                repeat: 3,
-                repeatType: "loop",
-                ease: "easeInOut"
-              }
-            }}
-            style={{
-              display: 'inline-block',
-              fontSize: '48px',
-              transformOrigin: 'bottom right'
-            }}
-          >
-            👋
-          </motion.div>
-          🙂
-          This Atta a front-end developer
-        </pre>
+          className="  text-5xl h-[112px] hidden sm:flex  items-center justify-center p-8 m-8 rounded-lg font-semibold w-fit "
+        >
+          <div className=" flex items-center justify-center gap-2 ">
+            <FaFaceSmileBeam />
+            <motion.div
+              animate={{
+                rotate: [0, -15, 10, -5, 0],
+                transition: {
+                  duration: 1,
+                  repeat: 3,
+                  repeatType: "loop",
+                  ease: "easeInOut"
+                }
+              }}
+              style={{
+                display: 'inline-block',
+                fontSize: '48px',
+                transformOrigin: 'bottom left'
+              }}
+            >
+              <MdWavingHand />
+            </motion.div>
+          </div>
+          <pre
+            style={{ color: colors.text[theme] }}
+            className=" hidden xl:block text-center font-semibold ml-2 text-4xl 2xl:text-5xl ">
+            Hi there!This Atta a front-end developer
+          </pre>
+        </div>
 
         <ul
           style={{
@@ -78,7 +89,7 @@ export default function Home() {
             backgroundColor: colors.bg[theme],
             boxShadow: ` 0px 0px 10px ${colors.bg[theme]} `
           }}
-          className=" absolute  right-0 top-0 p-8 m-8 shadow-sm rounded-lg font-semibold text-5xl  flex items-center gap-4">
+          className=" h-[112px] sm:absolute  right-0 top-0 p-8 m-8 shadow-sm rounded-lg font-semibold text-5xl  flex items-center justify-evenly gap-4">
           <motion.div
             className="mr-2 text-4xl"
             animate={!boxClicked ? { x: [0, 0, 20, 0] } : ''}
@@ -102,19 +113,24 @@ export default function Home() {
             }>
             <CiLight className=' hover:rotate-12  duration-300 ' />
           </li>
-
           <li
             onClick={() => setTheme('dark')}
             className={
               ` ${theme === 'dark' ? 'shadow-yellow-500 shadow-sm ' : ''}
-              rounded  text-5xl cursor-pointer `
+              rounded text-5xl cursor-pointer `
             }>
             <CiDark className=' hover:rotate-12  duration-300 ' />
           </li>
         </ul>
-        <section className="  h-[calc(100vh-230px)] w-full relative -z-20 flex items-center justify-center p-8 gap-14  ">
+        <pre
+          style={{ color: colors.text[theme] }}
+          className=" xl:hidden text-center font-semibold text-lg md:text-2xl ">
+          Hi there!This Atta a front-end developer
+        </pre>
+
+        <section className="  h-[calc(100vh-230px)] w-full relative -z-20 flex items-center justify-center p-8 gap-2 lg:gap-14  ">
           <LinesBG />
-          <div className=" relative w-56 h-56 ">
+          <div className=" relative w-14 h-14 sm:w-24 sm:h-24 md:w-32 md:h-32 xl:w-56 xl:h-56 ">
             <Image
               width={999}
               height={999}
@@ -128,19 +144,19 @@ export default function Home() {
               color: colors.text[theme],
               transform: 'scaleY(3.5) ',
             }}
-            className=" tracking-widest text-6xl">
+            className=" tracking-widest text-lg sm:text-xl md:text-3xl lg:text-4xl 2xl:text-6xl">
             Web Development Is Awesome.
           </pre>
         </section>
 
       </section>
-      <main
+      <section
         style={{
           transition: 'transform 0.5s ease',
           transform: projects ? 'rotateX(0deg) ' : 'rotateX(90deg)',
         }}
         className={`  duration-300 top-0 left-0 absolute h-full w-full bg-black/30 p-16 `}>
         <Projects colors={colors} theme={theme} showProjects={showProjects} />
-      </main>
+      </section>
     </main>)
 }

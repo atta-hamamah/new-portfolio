@@ -90,9 +90,9 @@ export default function Projects({ showProjects, theme, colors }: Props) {
             <section>
                 <pre
                     style={{ color: colors.text[theme] }}
-                    className=' py-8 font-semibold text-xl'>Work Samples:
+                    className=' py-8  font-semibold text-xl'>Work Samples:
                 </pre>
-                <div className=' flex items-center justify-evenly '>
+                <div className=' overflow-x-auto flex items-center justify-evenly pb-4 '>
                     {
                         projects.map(proj => (
                             <Card
@@ -106,26 +106,31 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                     style={{ color: colors.text[theme] }}
                     className=' font-semibold text-xl mt-6'>Contact Info:
                 </pre>
-                <div className=' flex items-center justify-center gap-12 mt-8'>
-                    {
-                        contacts.map(cont => (
-                            <Link
-                                href={cont.link}
-                                key={cont.color}
-                                className=' text-6xl rounded-md duration-200 '
-                                onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0px 0px 20px ${cont.color}`)}
-                                onMouseLeave={(e) => (e.currentTarget.style.boxShadow = ``)}
-                            >
-                                {cont.icon}
-                            </Link>
-                        ))
-                    }
-                    <div
-                        onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0px 0px 20px #B89B77 `)}
-                        onMouseLeave={(e) => (e.currentTarget.style.boxShadow = ``)}
-                        className='  px-2 flex items-center justify-center gap-2 duration-200 rounded'>
-                        <SiGmail className='  text-6xl flex items-center justify-center' />
-                        <p className=' text-4xl font-semibold'>7atta3@gamil.com</p>
+                <div className=' w-full overflow-x-auto '>
+                    <div className=' flex w-fit lg:w-full items-center justify-center gap-12 mt-8 pb-6 px-4'>
+                        {
+                            contacts.map(cont => (
+                                <main
+                                    className=' text-6xl rounded-md duration-200 '
+                                    onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0px 0px 20px ${cont.color}`)}
+                                    onMouseLeave={(e) => (e.currentTarget.style.boxShadow = ``)}
+                                    key={cont.color} >
+                                    <Link
+                                        href={cont.link}
+                                    >
+                                        {cont.icon}
+                                    </Link>
+                                </main>
+
+                            ))
+                        }
+                        <div
+                            onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0px 0px 20px #B89B77 `)}
+                            onMouseLeave={(e) => (e.currentTarget.style.boxShadow = ``)}
+                            className='  px-2 flex items-center justify-center gap-2 duration-200 rounded'>
+                            <SiGmail className='  text-6xl flex items-center justify-center' />
+                            <p className=' text-4xl font-semibold'>7atta3@gamil.com</p>
+                        </div>
                     </div>
                 </div>
             </section>

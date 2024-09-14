@@ -11,13 +11,13 @@ export default function Card({ name, link, icon, color }: Props) {
         <main className=' '>
             <Link
                 href={link}
-                className=' w-60 h-60 p-4 flex flex-wrap items-center justify-center'>
+                className=' p-4 flex flex-wrap items-center justify-center'>
                 <div
                     style={{
                         backgroundColor: color,
                         boxShadow: ` 0px 0px 10px ${color} `,
                     }}
-                    className=' text-[#EAEAEA] rounded-xl hover:scale-[1.15] duration-300 p-4 text-[200px]'>
+                    className=' text-[#EAEAEA] rounded-xl hover:scale-[1.15] duration-300 p-4 text-9xl lg:text-[200px]'>
 
                     {icon}
                 </div>
