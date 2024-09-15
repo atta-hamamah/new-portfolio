@@ -17,7 +17,7 @@ export default function Card({ name, link, icon, color }: Props) {
                         backgroundColor: color,
                         boxShadow: ` 0px 0px 10px ${color} `,
                     }}
-                    className=' text-[#EAEAEA] rounded-xl hover:scale-[1.15] duration-300 p-4 text-9xl lg:text-[200px]'>
+                    className=' text-[#EAEAEA] rounded-xl hover:scale-[1.15] duration-300 p-4 text-8xl lg:text-[150px]'>
 
                     {icon}
                 </div>

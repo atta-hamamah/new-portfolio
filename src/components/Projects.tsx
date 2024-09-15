@@ -111,7 +111,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                         {
                             contacts.map(cont => (
                                 <main
-                                    className=' text-6xl rounded-md duration-200 '
+                                    className=' text-5xl rounded-md duration-200 '
                                     onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0px 0px 20px ${cont.color}`)}
                                     onMouseLeave={(e) => (e.currentTarget.style.boxShadow = ``)}
                                     key={cont.color} >
@@ -129,7 +129,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                             onMouseLeave={(e) => (e.currentTarget.style.boxShadow = ``)}
                             className='  px-2 flex items-center justify-center gap-2 duration-200 rounded'>
                             <SiGmail className='  text-6xl flex items-center justify-center' />
-                            <p className=' text-4xl font-semibold'>7atta3@gamil.com</p>
+                            <p className=' text-3xl font-semibold'>7atta3@gamil.com</p>
                         </div>
                     </div>
                 </div>

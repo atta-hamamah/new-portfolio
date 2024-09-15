@@ -154,7 +154,7 @@ export default function Home() {
           transition: 'transform 0.5s ease',
           transform: projects ? 'rotateX(0deg) ' : 'rotateX(90deg)',
         }}
-        className='  duration-300 top-0 left-0 absolute h-full w-full bg-black/30 p-16 '>
+        className='  duration-300 top-0 left-0 absolute h-full w-full bg-black/30 p-12 '>
         <Projects colors={colors} theme={theme} showProjects={showProjects} />
       </section>
     </main>)
