@@ -116,6 +116,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                                     onMouseLeave={(e) => (e.currentTarget.style.boxShadow = ``)}
                                     key={cont.color} >
                                     <Link
+                                        target='blank'
                                         href={cont.link}
                                     >
                                         {cont.icon}

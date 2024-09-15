@@ -10,6 +10,7 @@ export default function Card({ name, link, icon, color }: Props) {
     return (
         <main className=' '>
             <Link
+                target='blank'
                 href={link}
                 className=' p-4 flex flex-wrap items-center justify-center'>
                 <div
