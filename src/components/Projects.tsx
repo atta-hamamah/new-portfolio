@@ -81,7 +81,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                 backgroundColor: colors.bg[theme],
                 boxShadow: ` 0px 0px 10px #EAEAEA `
             }}
-            className=' p-8 rotate origin-center tot text-4xl w-full h-full rounded-lg relative'>
+            className=' p-8 py-4 rotate origin-center tot text-4xl w-full h-full rounded-lg relative'>
             <span className=' absolute top-4 right-4 cursor-pointer hover:text-gray-400 duration-300'>
                 <FaRegWindowClose
                     onClick={() => showProjects(false)}
@@ -90,7 +90,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
             <section>
                 <pre
                     style={{ color: colors.text[theme] }}
-                    className=' py-8  font-semibold text-xl'>Work Samples:
+                    className=' py-6  font-semibold text-xl'>Work Samples:
                 </pre>
                 <div className=' overflow-x-auto flex items-center justify-evenly pb-4 '>
                     {
@@ -111,7 +111,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                         {
                             contacts.map(cont => (
                                 <main
-                                    className=' text-5xl rounded-md duration-200 '
+                                    className=' text-4xl rounded-md duration-200 '
                                     onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0px 0px 20px ${cont.color}`)}
                                     onMouseLeave={(e) => (e.currentTarget.style.boxShadow = ``)}
                                     key={cont.color} >
@@ -128,8 +128,8 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                             onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0px 0px 20px #B89B77 `)}
                             onMouseLeave={(e) => (e.currentTarget.style.boxShadow = ``)}
                             className='  px-2 flex items-center justify-center gap-2 duration-200 rounded'>
-                            <SiGmail className='  text-6xl flex items-center justify-center' />
-                            <p className=' text-3xl font-semibold'>7atta3@gamil.com</p>
+                            <SiGmail className='  text-4xl flex items-center justify-center' />
+                            <p className=' text-2xl font-semibold'>7atta3@gamil.com</p>
                         </div>
                     </div>
                 </div>
