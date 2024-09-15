@@ -148,14 +148,13 @@ export default function Home() {
             Web Development Is Awesome.
           </pre>
         </section>
-
       </section>
       <section
         style={{
           transition: 'transform 0.5s ease',
           transform: projects ? 'rotateX(0deg) ' : 'rotateX(90deg)',
         }}
-        className={`  duration-300 top-0 left-0 absolute h-full w-full bg-black/30 p-16 `}>
+        className='  duration-300 top-0 left-0 absolute h-full w-full bg-black/30 p-16 '>
         <Projects colors={colors} theme={theme} showProjects={showProjects} />
       </section>
     </main>)
