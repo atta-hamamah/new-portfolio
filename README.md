@@ -1,2 +1,2 @@
-Elegant portfolio design with dark and light modes.
-No special libraries used to create the hover effects and animations of Boxes .
+Fully responsive elegant portfolio design with dark and light modes. 
+No special libraries used to create the hover effects and animations of boxes.
