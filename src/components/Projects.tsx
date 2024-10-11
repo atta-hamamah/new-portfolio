@@ -48,7 +48,7 @@ const projects: Proj[] = [
         color: '#e67e22',
     },
     {
-        name: 'Old Portfolio',
+        name: 'Old Portfolio/Projects',
         link: 'https://old-port-up.netlify.app/',
         icon: <BsFillPersonLinesFill />,
         color: '#8e44ad',
