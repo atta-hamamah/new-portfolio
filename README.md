@@ -1,3 +1,5 @@
-Elegant Fully responsive portfolio design with dark and light modes. 
-using Next.js , TS and Tailwind .
-No special libraries used to create the hover effects and animations of boxes.
+Fully responsive portfolio designd and developed by me.
+
+-incluseds dark and light modes. 
+
+-using only Next.js, TS, and Tailwind, No special libraries were used to create the hovering effects and animations.
