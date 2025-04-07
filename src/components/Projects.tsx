@@ -92,7 +92,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                     style={{ color: colors.text[theme] }}
                     className=' py-6  font-semibold text-xl'>Work Samples:
                 </pre>
-                <div className=' grid grid-cols-1 md:grid-cols-3 h-[65%] overflow-y-auto items-center justify-evenly pb-4 '>
+                <div className=' grid grid-cols-1 md:grid-cols-3 h-[60%] overflow-y-auto items-center justify-evenly pb-4 '>
                     {
                         projects.map(proj => (
                             <Card
