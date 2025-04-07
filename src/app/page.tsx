@@ -78,8 +78,8 @@ export default function Home() {
           </div>
           <pre
             style={{ color: colors.text[theme] }}
-            className=" hidden xl:block text-center font-semibold ml-2 text-4xl 2xl:text-5xl ">
-            Hi there!This Atta a front-end developer
+            className=" hidden xl:block text-center font-semibold ml-2 text-xl 2xl:text-2xl ">
+            Hi there! This Atta, hover on the screen for more info
           </pre>
         </div>
 
@@ -122,31 +122,32 @@ export default function Home() {
             <CiDark className=' hover:rotate-12  duration-300 ' />
           </li>
         </ul>
-        <pre
+        <p
           style={{ color: colors.text[theme] }}
-          className=" xl:hidden text-center font-semibold text-lg md:text-2xl ">
-          Hi there!This Atta a front-end developer
-        </pre>
+          className=" xl:hidden text-center  tracking-widest font-semibold sm:text-lg md:text-2xl ">
+          Hi there!This Atta a front-end developer  hover on the screen for more info
+        </p>
 
         <section className="  h-[calc(100vh-230px)] w-full relative -z-20 flex items-center justify-center p-8 gap-2 lg:gap-14  ">
           <LinesBG />
-          <div className=" relative w-14 h-14 sm:w-24 sm:h-24 md:w-32 md:h-32 xl:w-56 xl:h-56 ">
+          <div className=" relative  ">
             <Image
               width={999}
               height={999}
               alt='image'
-              src='/face.png'
+              src='/face.jpg'
               className=" w-full h-full rounded-xl"
             />
           </div>
-          <pre
+          <p
             style={{
               color: colors.text[theme],
-              transform: 'scaleY(3.5) ',
+              transform: 'scaleY(2) ',
             }}
-            className=" tracking-widest text-lg sm:text-xl md:text-3xl lg:text-4xl 2xl:text-6xl">
-            Web Development Is Awesome.
-          </pre>
+            className=" tracking-widest text-lg  text-center md:text-2xl ">
+            hi there, this is Atta a frontend developer since 2022,
+            specialized in React and Next.js, familiar with latest technologies and Web3/Blockchain development
+          </p>
         </section>
       </section>
       <section

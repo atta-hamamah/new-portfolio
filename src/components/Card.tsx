@@ -24,7 +24,7 @@ export default function Card({ name, link, icon, color }: Props) {
                 </div>
             </Link>
             <pre
-                className=' mx-auto w-fit rounded-full text-lg font-semibold mt-4'>
+                className=' mx-auto w-fit rounded-full text-base sm:text-lg font-semibold mt-4'>
                 {`<${name}>`}
             </pre>
         </main >

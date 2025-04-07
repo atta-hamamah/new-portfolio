@@ -87,12 +87,12 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                     onClick={() => showProjects(false)}
                 />
             </span>
-            <section>
+            <section className=' w-full h-full'>
                 <pre
                     style={{ color: colors.text[theme] }}
                     className=' py-6  font-semibold text-xl'>Work Samples:
                 </pre>
-                <div className=' overflow-x-auto flex items-center justify-evenly pb-4 '>
+                <div className=' grid grid-cols-1 md:grid-cols-3 h-[65%] overflow-y-auto items-center justify-evenly pb-4 '>
                     {
                         projects.map(proj => (
                             <Card
@@ -104,7 +104,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                 </div>
                 <pre
                     style={{ color: colors.text[theme] }}
-                    className=' font-semibold text-xl mt-6'>Contact Info:
+                    className=' font-semibold text-xl mt-6'>Contacts:
                 </pre>
                 <div className=' w-full overflow-x-auto '>
                     <div className=' flex w-fit lg:w-full items-center justify-center gap-12 mt-8 pb-6 px-4'>
@@ -130,7 +130,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                             onMouseLeave={(e) => (e.currentTarget.style.boxShadow = ``)}
                             className='  px-2 flex items-center justify-center gap-2 duration-200 rounded'>
                             <SiGmail className='  text-4xl flex items-center justify-center' />
-                            <p className=' text-2xl font-semibold'>7atta3@gamil.com</p>
+                            <p className=' text-base sm:text-2xl font-semibold'>7atta3@gamil.com</p>
                         </div>
                     </div>
                 </div>
