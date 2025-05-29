@@ -92,7 +92,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                     style={{ color: colors.text[theme] }}
                     className=' py-6  font-semibold text-xl'>Work Samples:
                 </pre>
-                <div className=' grid grid-cols-1 md:grid-cols-3 h-[60%] overflow-y-auto items-center justify-evenly pb-4 '>
+                <div className=' border-b-2 pb-2 border-gray-500 grid grid-cols-1 md:grid-cols-3 h-[60%] gap-4 overflow-y-auto items-center justify-evenly pb-4 '>
                     {
                         projects.map(proj => (
                             <Card
@@ -106,8 +106,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                     style={{ color: colors.text[theme] }}
                     className=' font-semibold text-xl mt-6'>Contacts:
                 </pre>
-                <div className=' w-full overflow-x-auto '>
-                    <div className=' flex w-fit lg:w-full items-center justify-center gap-12 mt-8 pb-6 px-4'>
+                    <div className=' flex w-full items-center flex-wrap justify-center gap-6 mt-8 pb-6 px-4'>
                         {
                             contacts.map(cont => (
                                 <main
@@ -133,7 +132,6 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                             <p className=' text-base sm:text-2xl font-semibold'>7atta3@gamil.com</p>
                         </div>
                     </div>
-                </div>
             </section>
         </main>
     )

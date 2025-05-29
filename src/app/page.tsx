@@ -1,5 +1,5 @@
 'use client'
-import Boxes from "@/components/BoxesBg"
+import Boxes from "@/components/BoxesBg" 
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react"
@@ -10,8 +10,7 @@ import { FaHandPointRight } from "react-icons/fa";
 import { LiaBoxSolid } from "react-icons/lia";
 import { MdWavingHand } from "react-icons/md";
 import { FaFaceSmileBeam } from "react-icons/fa6";
-
-
+import { BsFileEarmarkPdf } from "react-icons/bs";
 
 interface Colors {
   text: {
@@ -25,7 +24,7 @@ interface Colors {
 }
 const colors: Colors = {
   text: {
-    dark: '#EAEAEA',
+    dark: '#ffffff',
     light: '#3A3B3E',
   },
   bg: {
@@ -39,124 +38,152 @@ export default function Home() {
   const [projects, showProjects] = useState(false)
   const [boxClicked, setBoxClicked] = useState(false)
 
-
   return (
-    <main className="">
+    <main className="relative">
       <section
         style={{ backgroundColor: colors.bg[theme] }}
-        className=" -z-0 relative h-screen w-full overflow-hidden">
-        <Boxes theme={theme} />
 
-        <div
-          style={{
-            color: colors.text[theme],
-            backgroundColor: colors.bg[theme],
-            boxShadow: ` 0px 0px 10px ${colors.bg[theme]} `
-          }}
-          className="  text-5xl h-[112px] hidden sm:flex  items-center justify-center p-8 m-8 rounded-lg font-semibold w-fit "
+        className="relative min-h-screen w-full overflow-hidden flex flex-col"
+      >
+
+        <section
+
+          className="absolute mt-28 inset-0 z-0 w-full flex flex-col lg:flex-row items-center justify-center p-4 sm:p-6 md:p-8 gap-4 lg:gap-10 xl:gap-14"
         >
-          <div className=" flex items-center justify-center gap-2 ">
-            <FaFaceSmileBeam />
-            <motion.div
-              animate={{
-                rotate: [0, -15, 10, -5, 0],
-                transition: {
-                  duration: 1,
-                  repeat: 3,
-                  repeatType: "loop",
-                  ease: "easeInOut"
-                }
-              }}
-              style={{
-                display: 'inline-block',
-                fontSize: '48px',
-                transformOrigin: 'bottom left'
-              }}
-            >
-              <MdWavingHand />
-            </motion.div>
+     
+          <div className="absolute inset-0 -z-10">
+            <LinesBG />
           </div>
-          <pre
-            style={{ color: colors.text[theme] }}
-            className=" hidden xl:block text-center font-semibold ml-2 text-xl 2xl:text-2xl ">
-            Hi there! This Atta, hover on the screen for more info
-          </pre>
-        </div>
 
-        <ul
-          style={{
-            color: colors.text[theme],
-            backgroundColor: colors.bg[theme],
-            boxShadow: ` 0px 0px 10px ${colors.bg[theme]} `
-          }}
-          className=" h-[112px] sm:absolute  right-0 top-0 p-8 m-8 shadow-sm rounded-lg font-semibold text-5xl  flex items-center justify-evenly gap-4">
-          <motion.div
-            className="mr-2 text-4xl"
-            animate={!boxClicked ? { x: [0, 0, 20, 0] } : ''}
-            transition={{
-              repeat: Infinity,
-              duration: 1,
-              ease: "easeInOut",
-            }}>
-            <FaHandPointRight />
-          </motion.div>
-          <LiaBoxSolid
-            className="cursor-pointer "
-            onClick={() => { showProjects(true), setBoxClicked(true) }}
-          />
-
-          <li
-            onClick={() => setTheme('light')}
-            className={
-              ` ${theme === 'light' ? 'shadow-yellow-500 shadow-sm ' : ''}
-              rounded  text-5xl cursor-pointer `
-            }>
-            <CiLight className=' hover:rotate-12  duration-300 ' />
-          </li>
-          <li
-            onClick={() => setTheme('dark')}
-            className={
-              ` ${theme === 'dark' ? 'shadow-yellow-500 shadow-sm ' : ''}
-              rounded text-5xl cursor-pointer `
-            }>
-            <CiDark className=' hover:rotate-12  duration-300 ' />
-          </li>
-        </ul>
-        <p
-          style={{ color: colors.text[theme] }}
-          className=" xl:hidden text-center  tracking-widest font-semibold sm:text-lg md:text-2xl ">
-          Hi there!This Atta a front-end developer  hover on the screen for more info
-        </p>
-
-        <section className="  h-[calc(100vh-230px)] w-full relative -z-20 flex items-center justify-center p-8 gap-2 lg:gap-14  ">
-          <LinesBG />
-          <div className=" relative  ">
+          <div className="relative w-full max-w-xs  lg:max-w-lg xl:max-w-xl mx-auto lg:mx-0">
             <Image
-              width={999}
-              height={999}
+              width={500}
+              height={500}
               alt='image'
               src='/face.jpg'
-              className=" w-full h-full rounded-xl"
+              className="w-full h-auto rounded-xl object-cover"
             />
           </div>
+
           <p
             style={{
               color: colors.text[theme],
-              transform: 'scaleY(2) ',
             }}
-            className=" tracking-widest text-lg  text-center md:text-2xl ">
-            hi there, this is Atta a frontend developer since 2022,
-            specialized in React and Next.js, familiar with latest technologies and Web3/Blockchain development
+            className="relative tracking-wide text-center font-semibold lg:text-left  sm:text-lg lg:text-2xl max-w-md lg:max-w-lg xl:max-w-2xl sm:leading-relaxed"
+          >
+            Hi there, this is Atta a frontend developer, graduated from Al-azhar University in 2019,
+            a full-time React/Next.js frontend developer since 2022, with a Proven track record of collaborating with cross-functional teams in fast-paced
+            Scrum/Agile environments familiar with latest technologies and Web3/Blockchain development.
           </p>
         </section>
+
+        <div className="absolute inset-0 z-10">
+          <Boxes theme={theme} /> {/* Assuming Boxes handles its own hover transparency */}
+        </div>
+
+
+        <div
+          className="relative z-20 flex flex-col sm:flex-row sm:justify-between items-center p-4 pb-0 sm:p-6 md:p-8 gap-4"
+        >
+
+          <div
+            style={{
+              color: colors.text[theme],
+              backgroundColor: colors.bg[theme],
+              boxShadow: ` 0px 0px 10px ${colors.bg[theme]} `
+            }}
+            className="flex items-center justify-center p-3 sm:p-4 md:p-6 rounded-lg font-semibold w-auto"
+          >
+            <div className="flex items-center justify-center gap-1 sm:gap-2">
+              <FaFaceSmileBeam className="text-3xl sm:text-4xl md:text-5xl" />
+              <motion.div
+                animate={{
+                  rotate: [0, -15, 10, -5, 0],
+                  transition: { duration: 1, repeat: 3, repeatType: "loop", ease: "easeInOut" }
+                }}
+                style={{ display: 'inline-block', transformOrigin: 'bottom left' }}
+                className="text-3xl sm:text-4xl md:text-5xl"
+              >
+                <MdWavingHand />
+              </motion.div>
+            </div>
+            <pre
+              style={{ color: colors.text[theme] }}
+              className="hidden md:block text-center font-semibold ml-2 text-sm lg:text-base xl:text-lg 2xl:text-xl"
+            >
+              Hi there!, hover on the screen!
+            </pre>
+          </div>
+
+          <ul
+            style={{
+              color: colors.text[theme],
+              backgroundColor: colors.bg[theme],
+              boxShadow: ` 0px 0px 10px ${colors.bg[theme]} `
+            }}
+            className="flex items-center justify-evenly gap-3 sm:gap-4 p-3 sm:p-4 md:p-6 shadow-sm rounded-lg font-semibold"
+          >
+            <motion.div
+              className="mr-1 sm:mr-2 text-2xl sm:text-3xl md:text-4xl"
+              animate={!boxClicked ? { x: [0, 0, 10, 0, 15, 0] } : {}}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}>
+              <FaHandPointRight />
+            </motion.div>
+            <LiaBoxSolid
+              className="cursor-pointer text-3xl sm:text-4xl md:text-5xl"
+              onClick={() => { showProjects(true); setBoxClicked(true); }}
+            />
+            <li
+              onClick={() => setTheme('light')}
+              className={` ${theme === 'light' ? 'shadow-yellow-500 shadow-sm ' : ''} rounded cursor-pointer text-3xl sm:text-4xl md:text-5xl`}
+            >
+              <CiLight className=' hover:rotate-12 duration-300 ' />
+            </li>
+            <li
+              onClick={() => setTheme('dark')}
+              className={` ${theme === 'dark' ? 'shadow-yellow-500 shadow-sm ' : ''} rounded cursor-pointer text-3xl sm:text-4xl md:text-5xl`}
+            >
+              <CiDark className=' hover:rotate-12 duration-300 ' />
+            </li>
+          </ul>
+        </div>
+        
+        <p
+          style={{ color: colors.text[theme] }}
+          className="relative z-20 md:hidden text-center tracking-widest font-semibold text-sm sm:text-base p-2"
+        >
+          Hi there! Hover the screen!
+        </p>
       </section>
+
       <section
         style={{
-          transition: 'transform 0.5s ease',
-          transform: projects ? 'rotateX(0deg) ' : 'rotateX(90deg)',
+          transition: 'transform 0.5s ease, opacity 0.5s ease',
+          transform: projects ? 'rotateX(0deg)' : 'rotateX(90deg)',
+          opacity: projects ? 1 : 0,
+          pointerEvents: projects ? 'auto' : 'none',
+          backgroundColor: theme === 'dark' ? 'rgba(0,0,0,0.7)' : 'rgba(255,255,255,0.7)',
         }}
-        className='  duration-300 top-0 left-0 absolute h-full w-full bg-black/30 p-12 '>
+        className='fixed inset-0 z-30 p-6 sm:p-8 md:p-12 overflow-y-auto'
+      >
         <Projects colors={colors} theme={theme} showProjects={showProjects} />
       </section>
-    </main>)
+
+      <a
+        href="/atta new cv.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          color: colors.text[theme],
+          backgroundColor: colors.bg[theme],
+          boxShadow: `0px 0px 10px ${colors.bg[theme]}`
+        }}
+        className="fixed flex flex-col items-center w-16 h-16 sm:w-24 sm:h-24  justify-center bottom-2 md:bottom-6 right-7 z-50 p-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300"
+        title="View Resume"
+      >
+        <BsFileEarmarkPdf className="text-xl md:text-4xl" />
+        <p className="text-xs font-semibold mt-1 md:mt-2">Resume</p>
+      </a>
+    </main>
+  )
 }
