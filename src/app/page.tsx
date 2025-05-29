@@ -146,6 +146,21 @@ export default function Home() {
               <CiDark className=' hover:rotate-12 duration-300 ' />
             </li>
           </ul>
+          <a
+            href="/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: colors.text[theme],
+              backgroundColor: colors.bg[theme],
+              boxShadow: `0px 0px 10px ${colors.bg[theme]}`
+            }}
+            className="fixed flex -z-10 flex-col items-center w-16 h-16 sm:w-24 sm:h-24  justify-center bottom-2 md:bottom-6 right-7 z-50 p-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300"
+            title="View Resume"
+          >
+            <BsFileEarmarkPdf className="text-xl md:text-4xl" />
+            <p className="text-xs font-semibold mt-1 md:mt-2">Resume</p>
+          </a>
         </div>
         
         <p
@@ -155,7 +170,6 @@ export default function Home() {
           Hi there! Hover the screen!
         </p>
       </section>
-
       <section
         style={{
           transition: 'transform 0.5s ease, opacity 0.5s ease',
@@ -169,21 +183,7 @@ export default function Home() {
         <Projects colors={colors} theme={theme} showProjects={showProjects} />
       </section>
 
-      <a
-        href="/atta new cv.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          color: colors.text[theme],
-          backgroundColor: colors.bg[theme],
-          boxShadow: `0px 0px 10px ${colors.bg[theme]}`
-        }}
-        className="fixed flex flex-col items-center w-16 h-16 sm:w-24 sm:h-24  justify-center bottom-2 md:bottom-6 right-7 z-50 p-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300"
-        title="View Resume"
-      >
-        <BsFileEarmarkPdf className="text-xl md:text-4xl" />
-        <p className="text-xs font-semibold mt-1 md:mt-2">Resume</p>
-      </a>
+
     </main>
   )
 }
