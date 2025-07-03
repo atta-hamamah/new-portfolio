@@ -178,7 +178,7 @@ export default function Home() {
           pointerEvents: projects ? 'auto' : 'none',
           backgroundColor: theme === 'dark' ? 'rgba(0,0,0,0.7)' : 'rgba(255,255,255,0.7)',
         }}
-        className='fixed inset-0 z-30 p-6 sm:p-8 md:p-12 overflow-y-auto'
+        className='fixed inset-0 z-30 p-6 sm:p-8 md:p-10 overflow-y-auto'
       >
         <Projects colors={colors} theme={theme} showProjects={showProjects} />
       </section>

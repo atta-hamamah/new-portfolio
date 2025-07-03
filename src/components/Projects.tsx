@@ -81,7 +81,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                 backgroundColor: colors.bg[theme],
                 boxShadow: ` 0px 0px 10px #EAEAEA `
             }}
-            className=' p-8 py-4 rotate origin-center tot text-4xl w-full h-full rounded-lg relative'>
+            className=' px-8 py-4 rotate origin-center tot text-4xl w-full h-full rounded-lg relative'>
             <span className=' absolute top-4 right-4 cursor-pointer hover:text-gray-400 duration-300'>
                 <FaRegWindowClose
                     onClick={() => showProjects(false)}
@@ -92,7 +92,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                     style={{ color: colors.text[theme] }}
                     className=' py-6  font-semibold text-xl'>Work Samples:
                 </pre>
-                <div className=' border-b-2 pb-2 border-gray-500 grid grid-cols-1 md:grid-cols-3 h-[60%] gap-4 overflow-y-auto items-center justify-evenly pb-4 '>
+                <div className=' border-b-2 border-gray-500 grid grid-cols-1 md:grid-cols-3 h-[67%] gap-4 overflow-y-auto items-center justify-evenly pb-4 '>
                     {
                         projects.map(proj => (
                             <Card
@@ -104,7 +104,7 @@ export default function Projects({ showProjects, theme, colors }: Props) {
                 </div>
                 <pre
                     style={{ color: colors.text[theme] }}
-                    className=' font-semibold text-xl mt-6'>Contacts:
+                    className=' font-semibold text-xl mt-4'>Contacts:
                 </pre>
                     <div className=' flex w-full items-center flex-wrap justify-center gap-6 mt-8 pb-6 px-4'>
                         {
