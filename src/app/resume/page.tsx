@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function ResumePage() {
   return (
     <iframe
-      src="/atta-new-cv.pdf"
+      src="/atta new cv.pdf"
       className="w-full h-screen"
       title="Atta Hamamah - Resume"
     />
