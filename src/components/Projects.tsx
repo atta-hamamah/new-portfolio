@@ -37,7 +37,7 @@ interface Contact {
 const projects: Proj[] = [
     {
         name: 'E-Commerce',
-        link: 'https://newecomm.netlify.app/',
+        link: 'https://e-commerce-gamma-sepia-64.vercel.app/',
         icon: <BsShop />,
         color: '#4B4F6C',
     },
