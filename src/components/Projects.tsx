@@ -43,13 +43,13 @@ const projects: Proj[] = [
     },
     {
         name: 'Form Designer',
-        link: 'https://formdes-2024.netlify.app/',
+        link: 'https://form-designer-one.vercel.app/',
         icon: <FaWpforms />,
         color: '#e67e22',
     },
     {
         name: 'Old Portfolio/Projects',
-        link: 'https://old-port-up.netlify.app/',
+        link: 'https://old-portfolio-cyan.vercel.app/',
         icon: <BsFillPersonLinesFill />,
         color: '#8e44ad',
     },
